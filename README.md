@@ -119,6 +119,10 @@ bench --site [site-name] set-maintenance-mode off
 ```
 
 ```bash
+bench start
+```
+
+```bash
 sudo bench setup production [frappe-user]
 ```
 
