@@ -79,7 +79,8 @@ sudo apt-get install redis-server -y
 #### Instal CURL, Node, NPM and Yarn
 ```bash
 sudo apt install curl
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash source ~/.profile nvm install 18
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+source ~/.profile nvm install 18
 sudo apt-get install npm -y
 sudo npm install -g yarn -y
 ```
@@ -130,15 +131,25 @@ sudo bench setup production [frappe-user]
 bench setup nginx
 ```
 
+### Try following command if it ends then don't setup the production else setup the production again
+```bash
+bench start
+```
+
+### If it the bench start do not end then user this command again
+```bash
+sudo bench setup production [frappe-user]
+```
+
 ```bash
 sudo supervisorctl restart all sudo bench setup production [frappe-user]
 ```
 
 ### Install ERPNext and other Apps
 ``` bash
-bench get-app payments
+bench get-app --branch version-15 payments
 bench get-app --branch version-15 erpnext
-bench get-app hrms
+bench get-app --branch version-15 hrms
 bench --site [site-name] install-app erpnext
 bench --site [site-name] install-app hrms
 bench migrate
